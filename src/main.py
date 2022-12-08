@@ -1,7 +1,11 @@
 import pygame
+#import snakeGrid as sG
 
 CONST_WINDOW_START_SIZE_PX = (800, 600)
 CONST_WINDOW_FLAGS = pygame.RESIZABLE
+
+CONST_BACKGROUND_COLOUR = pygame.Color(0, 110, 0)
+CONST_GRID_COLOUR = pygame.Color(0, 160, 0)
 
 def initWindow() -> pygame.Surface:
     return pygame.display.set_mode(CONST_WINDOW_START_SIZE_PX, flags=CONST_WINDOW_FLAGS)
@@ -24,9 +28,10 @@ def main():
 
     gameIsRunning = True
     while gameIsRunning:
-        gameWindow.fill((0, 0, 0))
+        gameWindow.fill(CONST_BACKGROUND_COLOUR)
 
-        pygame.draw.circle(gameWindow, pygame.Color( 255, 255, 255 ), pygame.mouse.get_pos(), 5)
+        #grid = sG.SnakeGrid(3, 3)
+        #grid.render()
         pygame.display.update()
         gameIsRunning = windowEvents(gameWindow)
     
