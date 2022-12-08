@@ -1,5 +1,5 @@
 import pygame
-#import snakeGrid as sG
+import snakeGrid as sG
 
 CONST_WINDOW_START_SIZE_PX = (800, 600)
 CONST_WINDOW_FLAGS = pygame.RESIZABLE
@@ -30,8 +30,8 @@ def main():
     while gameIsRunning:
         gameWindow.fill(CONST_BACKGROUND_COLOUR)
 
-        #grid = sG.SnakeGrid(3, 3)
-        #grid.render()
+        grid = sG.SnakeGrid(3, 3, CONST_GRID_COLOUR, gameWindow)
+        grid.render()
         pygame.display.update()
         gameIsRunning = windowEvents(gameWindow)
     

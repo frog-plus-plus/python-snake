@@ -18,5 +18,9 @@ class SnakeGrid:
     def render(self):
         for widthCounter in range(self.__width):
             for heightCounter in range(self.__height):
-                pygame.draw.rect(self.__gameWindow, self.__squareColour, pygame.Rect())
+                left = (self.__gameWindow.get_width() / self.__width) * widthCounter
+                top = (self.__gameWindow.get_height() / self.__height) * heightCounter
+                width = self.__gameWindow.get_width() / self.__width
+                height = self.__gameWindow.get_height() / self.__height
+                pygame.draw.rect(self.__gameWindow, self.__squareColour, pygame.Rect(left, top, width, height))
 
